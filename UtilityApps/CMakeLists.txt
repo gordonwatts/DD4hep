@@ -35,13 +35,15 @@ dd4hep_add_executable( dumpdetector
   USES DDRec
   OPTIONAL       [GEANT4 REQUIRED SOURCES src/dumpdetector.cpp])
 #-----------------------------------------------------------------------------------
-dd4hep_add_executable(test_surfaces
-  USES     DDRec DDTest
-  OPTIONAL [LCIO REQUIRED SOURCES src/test_surfaces.cpp])
+if ( ${BUILD_TESTING} )
+  dd4hep_add_executable(test_surfaces
+    USES     DDRec DDTest
+    OPTIONAL [LCIO REQUIRED SOURCES src/test_surfaces.cpp])
 #-----------------------------------------------------------------------------------
-dd4hep_add_executable(test_cellid_position_converter
-  USES     DDRec DDTest
-  OPTIONAL [LCIO REQUIRED SOURCES src/test_cellid_position_converter.cpp])
+  dd4hep_add_executable(test_cellid_position_converter
+    USES     DDRec DDTest
+    OPTIONAL [LCIO REQUIRED SOURCES src/test_cellid_position_converter.cpp])
+endif()
 #-----------------------------------------------------------------------------------
 dd4hep_add_dictionary( G__eve
   SOURCES src/EvNavHandler.h

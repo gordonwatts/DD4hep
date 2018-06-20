@@ -37,7 +37,6 @@ if(DD4HEP_USE_GEANT4)
     SOURCES   DDEve/IO.cpp
     GENERATED G__DDG4IO.cxx
     OPTIONAL  DDG4
-	USES CLHEP
     )
 endif()
 

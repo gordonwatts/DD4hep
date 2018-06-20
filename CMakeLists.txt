@@ -94,6 +94,13 @@ add_definitions( -DBOOST_SPIRIT_USE_PHOENIX_V3 )
 if(DD4HEP_USE_GEANT4)
   find_package( Geant4 10.2.2 REQUIRED  gdml ui_all vis_all )
   include( ${Geant4_USE_FILE} )
+  if(Geant4_builtin_clhep_FOUND)
+    MESSAGE(STATUS "Geant4 using builtin CLHEP")
+    MESSAGE(STATUS "Geant4 was built with ${Geant4_TLS_MODEL}")
+    SET(CLHEP "")
+  else()
+    SET(CLHEP CLHEP)
+  endif()
 endif()
 
 ######################

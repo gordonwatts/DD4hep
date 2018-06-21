@@ -30,10 +30,10 @@ if (DD4HEP_USE_XERCESC)
           [DD4hep  REQUIRED COMPONENTS DDCore DDDB]
     )
   #---Package installation procedure(s) -----------------------------------------
-  install ( PROGRAMS scripts/run_dddb.sh DESTINATION {DD4hep_DIR}/bin)
-  install ( PROGRAMS scripts/display_dddb.sh DESTINATION {DD4hep_DIR}/bin)
-  install ( PROGRAMS scripts/extract_dddb.sh DESTINATION {DD4hep_DIR}/bin)
-  install ( FILES    data/DDDB.tar.gz DESTINATION {DD4hep_DIR}/examples/DDDB)
+  install ( PROGRAMS scripts/run_dddb.sh DESTINATION ${DD4hep_DIR}/bin)
+  install ( PROGRAMS scripts/display_dddb.sh DESTINATION ${DD4hep_DIR}/bin)
+  install ( PROGRAMS scripts/extract_dddb.sh DESTINATION ${DD4hep_DIR}/bin)
+  install ( FILES    data/DDDB.tar.gz DESTINATION ${DD4hep_DIR}/examples/DDDB)
   #---Testing--------------------------------------------------------------------
   dd4hep_configure_scripts ( DDDB DEFAULT_SETUP WITH_TESTS )
   #
